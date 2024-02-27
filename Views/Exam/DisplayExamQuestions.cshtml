@@ -1,0 +1,179 @@
+﻿@model IList<Select_Exam_QuestionResult>
+
+@{
+    ViewBag.Title = "Exam Questions";
+    DateTime examDate = ViewBag.ExamDate;
+    TimeSpan examTime = ViewBag.ExamTime;
+    int examDuration = ViewBag.ExamDuration;
+
+    string[] answers = new string[10];
+}
+
+
+
+<body style="margin-top:150px">
+
+<h2 class="text-center">Exam Questions</h2>
+
+@if (Model.Count == 0)
+{
+    <p>No questions found for this exam.</p>
+}
+else
+{
+    <form id="examForm" method="post" action="@Url.Action("SubmitExam", "Exam")">
+
+
+        <input type="hidden" name="student_ID" value="2" />
+        <!-- Hidden field for exam_ID -->
+        <div class="container">
+            <div class="bg-light p-3 mb-3 rounded border-2">
+                <h2 class="mb-3">Exam Instructions</h2>
+                <p class="mb-3">Please read the following instructions carefully before starting the exam:</p>
+                <ul class="list-unstyled">
+                    <li>&#8226; No Phones Allowed!!</li>
+                    <li>&#8226; Follow the guidance of the exam protocol.</li>
+                    <li>&#8226; Raise your hand if you have any questions during the exam.</li>
+                    <!-- Add more instructions as needed -->
+                </ul>
+            </div>
+        </div>
+
+        <input type="hidden" name="student_ID" value="2" />
+
+        <input type="hidden" name="exam_ID" value="@ViewBag.examId" />
+
+
+
+
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.0/font/bootstrap-icons.css" rel="stylesheet">
+
+        <div class="bg-success text-white p-3 rounded-start start-0 p-3">
+            <div class="text-center"><span class="bi bi-alarm"></span> Time Remaining: <span id="time"></span></div>
+        </div>
+
+
+
+
+
+
+
+
+            <table class="table table-hover table-striped shadow p-3 mb-2 bg-white rounded text-start">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Question</th>
+                        <th>Choices</th>
+                    </tr>
+                </thead>
+                <tbody class="text-start">
+                    @{
+                        int idx = -1;
+                    }
+                    @foreach (var question in Model)
+                    {
+                        idx++;
+
+                        <tr>
+                            <td>@(idx+1)</td>
+                            <td>@question.Question</td>
+                            <td class="text-start">
+                                <!-- Use text-start class to left-align content -->
+                                @if (question.Type == "MCQ")
+                                {
+                                    char choiceLabel = 'a';
+                                    foreach (var choice in GetChoicesForQuestion(question.Question_ID))
+                                    {
+                                        <label class="d-block mb-2">
+                                            <input type="radio" name="answers[@idx]" value="@choiceLabel" />
+                                            @choice.Choices
+                                        </label>
+                                        choiceLabel++;
+                                    }
+                                }
+                                else // True/False
+                                {
+                                    <label class="d-block mb-2">
+                                        <input type="radio" name="answers[@idx]" value="a" />
+                                        True
+                                    </label>
+                                    <label class="d-block mb-2">
+                                        <input type="radio" name="answers[@idx]" value="b" />
+                                        False
+                                    </label>
+                                }
+                            <input type="radio" name="answers[@idx]" value="z" style="display: none;" checked />
+
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        <div class="text-end">
+            <button type="submit" class="btn btn-success btn-lg">Submit</button>
+        </div>
+
+    </form>
+}
+
+<script>
+    var examDateTime = new Date(@examDate.Year, @examDate.Month - 1, @examDate.Day, @examTime.Hours, @examTime.Minutes, 0);
+    console.log(examDateTime);
+
+    var now = new Date();
+    console.log(now);
+
+    var timeDifference = now.getTime() - examDateTime.getTime();  // Difference between exam time and current time in milliseconds
+    console.log(timeDifference);
+
+    var remainingTimeInSeconds = Math.max(Math.floor((@examDuration * 60) - (timeDifference / 1000)), 0); // Remaining time in seconds, adjusted for exam duration
+    console.log(remainingTimeInSeconds);
+
+    var countdown = remainingTimeInSeconds;
+    var timerDisplay = document.getElementById('time');
+    var timerInterval = setInterval(function () {
+        var minutes = Math.floor(countdown / 60);
+        var seconds = countdown % 60;
+
+        timerDisplay.textContent = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+
+        if (--countdown < 0) {
+            clearInterval(timerInterval);
+
+            // Submit the form
+            document.getElementById('examForm').submit();
+        }
+
+
+    }, 1000);
+
+    document.getElementById('examForm').addEventListener('submit', function (event) {
+        var questionGroups = document.querySelectorAll('input[name^="answers["]:checked');
+        var cnt = 0;
+        questionGroups.forEach(function (input) {
+            if (input.value !== 'z') {
+                cnt++;
+            }
+        });
+        if (cnt < 10) {
+            alert('Please answer all questions before submitting.');
+            event.preventDefault(); // Prevent form submission
+        }
+    });
+</script>
+</body>
+
+@functions {
+    public IList<Select_ChoicesResult> GetChoicesForQuestion(int questionId)
+    {
+        using (var c = new WebApplication1.Context.ExaminationSystemContext())
+        {
+            // Call the method from DbContext to get choices for the question
+            return c.Select_ChoicesResult(questionId).ToList();
+        }
+    }
+}

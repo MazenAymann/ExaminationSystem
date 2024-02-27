@@ -1,0 +1,115 @@
+﻿@using WebApplication1.Data.Enums
+@model IEnumerable<SelectStudentExamsResult>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Exams</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0; /* Add some margin for better appearance */
+            border-radius: 10px; /* Add rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 12px; /* Increase padding for better spacing */
+        }
+
+        /* Add striped style for odd rows */
+        tr:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+
+
+        th {
+            background-color: #f2f2f2;
+        }
+        /* Style for hyperlink */
+        .link {
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body style="margin-top:150px">
+
+    <h1 class="text-center">Student's Exams</h1>
+
+    <div class="mt-2 d-flex justify-content-center align-items-center">
+        <table class="table table-hover table-striped rounded text-center" style="max-width: 800px;">
+            <thead>
+                <tr>
+                    <th class="py-3 text-center">Course Name</th>
+                    <th class="py-3 text-center">Date</th>
+                    <th class="py-3 text-center">Time</th>
+                    <th class="py-3 text-center">Duration</th>
+                    <th class="py-3 text-center">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    item.setExamStatus();
+
+                    <tr class="text-center my-3">
+                        <td class="py-2 text-center">@item.Crs_Name</td>
+                        <td class="py-2 text-center">@item.Date?.ToShortDateString()</td>
+                        <td class="py-2 text-center">@item.time?.ToString("hh\\:mm")</td>
+                        <td class="py-2 text-center">@item.Duration</td>
+
+                        @if (item.examStatus == ExamStatus.submitted)
+                        {
+                            <td class="py-2 text-center" style="background-color: #4CAF50; color: white;">Grade: @((item.Grade) * 10)%</td>
+
+                        }
+                        else if (item.examStatus == ExamStatus.NotAvailable)
+                        {
+                            <td class="py-2 text-center" style="background-color: #2196F3; color: white;">@item.examStatus</td> <!-- Blue background for not available exams -->
+                        }
+                        else if (item.examStatus == ExamStatus.Missed)
+                        {
+                            <td class="py-2 text-center" style="background-color: #F44336; color: white;">Status: @item.examStatus</td> <!-- Red background for missed exams -->
+                        }
+                        else if (item.examStatus == ExamStatus.Available)
+                        {
+                            <td class="py-2 text-center"><a href="#" class="link" onclick="displayExam('@item.Exam_ID')">Take Exam</a></td> <!-- Link to take exam -->
+                        }
+                        else
+                        {
+                            <td class="py-2 text-center">Status: @item.examStatus</td> <!-- Default style for other cases -->
+                        }
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <script>
+        function displayExam( examId) {
+
+
+                window.location.href = "../Exam/DisplayExamQuestions?examId=" + examId;
+
+        }
+
+        // Example usage
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

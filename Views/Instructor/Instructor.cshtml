@@ -1,0 +1,187 @@
+﻿@{
+    ViewData["Title"] = "Instructor";
+}
+
+@using Microsoft.IdentityModel.Tokens
+@using WebApplication1.Controllers
+@model WebApplication1.Entities.Exam_Structure
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Exam</title>
+    <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+@if (Model?.Structure_ID != null)
+{
+    <input type="hidden" id="off" name="courseId" value="">
+
+    <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasTopLabel">Exam Created Successfully</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body overflow-hidden" style="margin-top: -27px">
+            @{
+                DateTime dateTime = (DateTime)Model.Date;
+
+                string dateOnly = dateTime.ToString("yyyy-MM-dd");
+            }
+                <pre  style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:16px; font-weight:800;">
+    Course ID: @Model.Course_ID
+    Date: @dateOnly
+    Time: @Model.time
+    Duration: @Model.Duration minutes
+    Number of T/F: @Model.TF_Count
+    Number of MCQs: @Model.MCQ_Count
+</pre>
+
+        </div>
+    </div>
+}
+<div class="container w-50 pt-5 pb-5" style="margin-top:20vh">
+    <div class="card p-5">
+        <div class="card-body">
+
+            <h1 class="card-title text-center text-secondary" style="font-size:50px">Create Exam</h1>
+            <div class="alert alert-warning" role="alert" id="alert" style="display: none">
+                Number of Questions must be 10.
+            </div>
+            <div class="container row align-items-center justify-content-between">
+                <form action="@Url.Action("CreateExam", "ExamStructure")" method="post" class="fs-4 col-6" style="font-family:Montserrat;font-weight:600" onsubmit="return validateForm()">
+                    <input type="hidden" id="courseId" name="courseId" value="">
+                    <div class="form-group">
+                        <label for="course">Course:</label>
+                        <div class="dropdown my-2">
+                            <button style="width:180px"class="btn btn-outline-dark dropdown-toggle" type="button" id="crsBtn" data-bs-toggle="dropdown" aria-expanded="false">
+                                Choose Course
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><button style="width:180px" class="dropdown-item cr" type="button" value="1">C#</button></li>
+                                <li><button style="width:180px" class="dropdown-item cr" type="button" value="2">SQL</button></li>
+                                <li><button style="width:180px" class="dropdown-item cr" type="button" value="3">OOP</button></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <input type="hidden" id="departmentId" name="departmentId" value="1">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="department">Department:</label>
+                            <div class="dropdown my-2">
+                                <button style="width:220px"class="btn btn-outline-dark dropdown-toggle" type="button" id="deptBtn" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Choose Department
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><button style="width:180px" class="dropdown-item dp" type="button" value="1">SD</button></li>
+                                    <li><button style="width:180px" class="dropdown-item dp" type="button" value="2">Mobile Cross</button></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <label for="numMcq">Number of MCQs: </label>
+                        <input style="width:250px" type="number" class="form-control my-2" id="numMcq" name="numMcq" min="1" max="10" required oninput="checkSum()">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="numTf">Number of T/F Qs:</label>
+                        <input style="width:250px" type="number" class="form-control my-2" id="numTf" name="numTf" min="1" max="10" required oninput="checkSum()">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="duration">Duration: </label>
+                        <input style="width:250px" type="number" class="form-control my-2" id="duration" name="duration" min="1" required>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <label for="date">Date:</label>
+                        <input style="width:300px" type="date" class="form-control my-2" id="date" name="date" required>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <label for="time">Time:</label>
+                        <input style="width:300px" type="time" class="form-control my-2" id="time" name="time" required>
+                    </div>
+
+
+
+                    <button type="submit" class="btn btn-secondary text-white m-a" id="submitBtn" >Create Exam</button>
+
+                </form>
+                <div class="col-6">
+                    <img src="~/assets/img/ins.svg"/>
+                    <center><button id="previewBtn" class="btn btn-secondary text-white m-a ">View Exams</button></center>
+                </div>
+            </div>
+        </div>
+        <br/>
+
+    </div>
+</div>
+
+<script>
+
+        var off = document.getElementById("off")
+        if (off) {
+            document.getElementById("offcanvasTop").classList.add("show");
+
+        }
+
+        document.querySelectorAll('.cr').forEach(function (item) {
+            item.addEventListener('click', function () {
+                console.log("In Crs Btn")
+                // Get the value of the clicked dropdown item
+                var courseId = parseInt(this.value);
+
+                // Set the value of the hidden input field to the selected course ID
+                document.getElementById('courseId').value = courseId;
+                document.getElementById("crsBtn").innerHTML = this.innerHTML;
+            });
+        });
+
+        document.querySelectorAll('.dp').forEach(function (item) {
+            item.addEventListener('click', function () {
+                console.log("In Dept Btn")
+                // Get the value of the clicked dropdown item
+                var dept = parseInt(this.value);
+                console.log(dept);
+
+                // Set the value of the hidden input field to the selected course ID
+                document.getElementById('departmentId').value = dept;
+                document.getElementById("deptBtn").innerHTML = this.innerHTML;
+            });
+        });
+
+        document.getElementById("previewBtn").addEventListener("click", function () {
+            // Get the URL for the preview action using Url.Action
+            var previewUrl = '@Url.Action("Preview", "Instructor")';
+
+            // Redirect to the preview action
+            window.location.href = previewUrl;
+        });
+
+    function checkSum() {
+
+        var mcq = parseFloat(document.getElementById("numMcq").value);
+        var tf = parseFloat(document.getElementById("numTf").value);
+        var sum = mcq + tf;
+
+        if (sum != 10) {
+            document.getElementById("alert").style.display = "block";
+                document.getElementById("submitBtn").disabled = true;
+        }
+        else {
+                document.getElementById("alert").style.display = "none";
+                document.getElementById("submitBtn").disabled = false;
+        }
+
+    }
+</script>
+</body>
+</html>
+
+

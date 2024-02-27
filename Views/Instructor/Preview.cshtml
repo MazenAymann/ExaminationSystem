@@ -1,0 +1,65 @@
+﻿@model IEnumerable<WebApplication1.Entities.Exam_Structure>
+
+@{
+    ViewData["Title"] = "Preview";
+}
+<body style="margin-top:20vh">
+<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css"/>
+<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<div class="container text-center">
+    <div class="row row-cols-2">
+        @foreach (var item in Model)
+        {
+                <div class="card text-white bg-secondary m-2" style="max-width: 18rem;">
+                <div class="card-header">Exam -@item.Structure_ID</div>
+                <div class="card-body">
+                    <table class="table text-white text-start">
+                        <tr>
+                            <td>Course</td>
+                            @{
+                                string crsName;
+                                if (@item.Course_ID == 1)
+                                    crsName = "C#";
+                                else if (@item.Course_ID == 2)
+                                    crsName = "SQL";
+                                else
+                                    crsName = "OOP";
+                            }
+                            <td>@crsName</td>
+                        </tr>
+                        <tr>
+                            <td>MCQs Number</td>
+                            <td>@item.MCQ_Count</td>
+                        </tr>
+                        <tr>
+                            <td>T/F Qs Number</td>
+                            <td>@item.TF_Count</td>
+                        </tr>
+                        <tr>
+                            <td>Date</td>
+                            @{
+                                DateTime dateTime = (DateTime)item.Date;
+
+                                string dateOnly = dateTime.ToString("yyyy-MM-dd");
+                            }
+                            <td>@dateOnly</td>
+                        </tr>
+                        <tr>
+                            <td>Time</td>
+                            <td>@item.time</td>
+                        </tr>
+                        <tr>
+                            <td>Duration</td>
+                            <td>@item.Duration</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+
+
+</body>

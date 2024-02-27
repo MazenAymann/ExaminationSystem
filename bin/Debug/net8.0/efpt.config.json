@@ -1,0 +1,94 @@
+﻿{
+   "CodeGenerationMode": 3,
+   "ContextClassName": "ExaminationSystemContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": true,
+   "ModelNamespace": null,
+   "OutputContextPath": "Context",
+   "OutputPath": "Entities",
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "WebApplication1",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 2,
+   "SelectedToBeGenerated": 0,
+   "T4TemplatePath": null,
+   "Tables": [
+      {
+         "Name": "[dbo].[Choices]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Course]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Department]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Exam]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Exam_Question]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Exam_Structure]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Instructor]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Instructor_Courses]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Question]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Student]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Student_Answer]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Student_Course]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Topic]",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": "msi\\sqlexpress.ExaminationSystem.dbo",
+   "UncountableWords": null,
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": true,
+   "UseDateOnlyTimeOnly": false,
+   "UseDbContextSplitting": false,
+   "UseDecimalDataAnnotationForSprocResult": true,
+   "UseFluentApiOnly": false,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": true,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UsePrefixNavigationNaming": false,
+   "UseSchemaFolders": false,
+   "UseSchemaNamespaces": false,
+   "UseSpatial": false,
+   "UseT4": false
+}
