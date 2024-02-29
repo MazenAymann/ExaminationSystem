@@ -55,7 +55,7 @@
                     <div class="form-group">
                         <label for="course">Course:</label>
                         <div class="dropdown my-2">
-                            <button style="width:180px"class="btn btn-outline-dark dropdown-toggle" type="button" id="crsBtn" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button style="width:180px"class="btn btn-outline-dark dropdown-toggle" type="button" id="crsBtn" data-bs-toggle="dropdown" aria-expanded="false" required>
                                 Choose Course
                             </button>
                             <ul class="dropdown-menu">
@@ -66,12 +66,12 @@
                         </div>
                     </div>
 
-                    <input type="hidden" id="departmentId" name="departmentId" value="1">
+                    <input type="hidden" id="departmentId" name="departmentId" value="">
                     <div class="form-group">
                         <div class="form-group">
                             <label for="department">Department:</label>
                             <div class="dropdown my-2">
-                                <button style="width:220px"class="btn btn-outline-dark dropdown-toggle" type="button" id="deptBtn" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button style="width:220px"class="btn btn-outline-dark dropdown-toggle" type="button" id="deptBtn" data-bs-toggle="dropdown" aria-expanded="false" required>
                                     Choose Department
                                 </button>
                                 <ul class="dropdown-menu">
@@ -183,6 +183,23 @@
 
 
     }
+
+        document.getElementById("formCreate").addEventListener("submit", function (event) {
+            // Prevent the form from submitting if department is not selected
+            if (document.getElementById('departmentId').value === '') {
+                event.preventDefault();
+                document.getElementById("deptBtn").className = "btn btn-outline-danger dropdown-toggle"
+            }else{
+                document.getElementById("deptBtn").className = "btn btn-outline-dark dropdown-toggle"
+            }
+
+            if (document.getElementById('courseId').value === '') {
+                event.preventDefault();
+                document.getElementById("crsBtn").className = "btn btn-outline-danger dropdown-toggle"
+            } else {
+                document.getElementById("crsBtn").className = "btn btn-outline-dark dropdown-toggle"
+            }
+        });
 
 </script>
 </body>

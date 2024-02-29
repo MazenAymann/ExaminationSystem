@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Education\\ITI\\Advanced SQL\\Project (Team Kolo 3la Allah)\\New folder\\MVC\\MVC\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {}
+    "D:\\Education\\ITI\\[DONE]\\Core Courses\\Advanced SQL\\Project (Team Kolo 3la Allah)\\New folder\\MVC\\MVC\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {}
   },
   "projects": {
-    "D:\\Education\\ITI\\Advanced SQL\\Project (Team Kolo 3la Allah)\\New folder\\MVC\\MVC\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {
+    "D:\\Education\\ITI\\[DONE]\\Core Courses\\Advanced SQL\\Project (Team Kolo 3la Allah)\\New folder\\MVC\\MVC\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Education\\ITI\\Advanced SQL\\Project (Team Kolo 3la Allah)\\New folder\\MVC\\MVC\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+        "projectUniqueName": "D:\\Education\\ITI\\[DONE]\\Core Courses\\Advanced SQL\\Project (Team Kolo 3la Allah)\\New folder\\MVC\\MVC\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
         "projectName": "WebApplication1",
-        "projectPath": "D:\\Education\\ITI\\Advanced SQL\\Project (Team Kolo 3la Allah)\\New folder\\MVC\\MVC\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+        "projectPath": "D:\\Education\\ITI\\[DONE]\\Core Courses\\Advanced SQL\\Project (Team Kolo 3la Allah)\\New folder\\MVC\\MVC\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
         "packagesPath": "C:\\Users\\Mazin\\.nuget\\packages\\",
-        "outputPath": "D:\\Education\\ITI\\Advanced SQL\\Project (Team Kolo 3la Allah)\\New folder\\MVC\\MVC\\WebApplication1\\WebApplication1\\obj\\",
+        "outputPath": "D:\\Education\\ITI\\[DONE]\\Core Courses\\Advanced SQL\\Project (Team Kolo 3la Allah)\\New folder\\MVC\\MVC\\WebApplication1\\WebApplication1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Mazin\\AppData\\Roaming\\NuGet\\NuGet.Config",
