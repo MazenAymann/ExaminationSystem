@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xrjv9G8vMwkXjt75hvTz4OIQH6EuWo5fCQti4REQPE1u1DH7ggHiTy8joJk20fFarVj409hFOCMRpSSM5wLUSQ==",
+  "dgSpecHash": "m1V2ldgaMHZHtJTOc+9jszgXcOaKuF57Eifoy9o2QdOXsUx/QSQM1v+cFEaXoUo5J4mVV1ws5xkRpaHGB7C6PA==",
   "success": true,
-  "projectFilePath": "D:\\Education\\ITI\\Advanced SQL\\Project (Team Kolo 3la Allah)\\MVC\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+  "projectFilePath": "D:\\Education\\ITI\\Advanced SQL\\Project (Team Kolo 3la Allah)\\New folder\\MVC\\MVC\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mazin\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Mazin\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

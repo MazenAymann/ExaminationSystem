@@ -17,71 +17,71 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebApplication1
 build_property.RootNamespace = WebApplication1
-build_property.ProjectDir = D:\Education\ITI\Advanced SQL\Project (Team Kolo 3la Allah)\MVC\WebApplication1\WebApplication1\
+build_property.ProjectDir = D:\Education\ITI\Advanced SQL\Project (Team Kolo 3la Allah)\New folder\MVC\MVC\WebApplication1\WebApplication1\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Education\ITI\Advanced SQL\Project (Team Kolo 3la Allah)\MVC\WebApplication1\WebApplication1
+build_property.MSBuildProjectDirectory = D:\Education\ITI\Advanced SQL\Project (Team Kolo 3la Allah)\New folder\MVC\MVC\WebApplication1\WebApplication1
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Education/ITI/Advanced SQL/Project (Team Kolo 3la Allah)/MVC/WebApplication1/WebApplication1/Views/ExamStructure/ExamStructure.cshtml]
+[D:/Education/ITI/Advanced SQL/Project (Team Kolo 3la Allah)/New folder/MVC/MVC/WebApplication1/WebApplication1/Views/ExamStructure/ExamStructure.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbVN0cnVjdHVyZVxFeGFtU3RydWN0dXJlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Education/ITI/Advanced SQL/Project (Team Kolo 3la Allah)/MVC/WebApplication1/WebApplication1/Views/Exam/DisplayExamQuestions.cshtml]
+[D:/Education/ITI/Advanced SQL/Project (Team Kolo 3la Allah)/New folder/MVC/MVC/WebApplication1/WebApplication1/Views/Exam/DisplayExamQuestions.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbVxEaXNwbGF5RXhhbVF1ZXN0aW9ucy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Education/ITI/Advanced SQL/Project (Team Kolo 3la Allah)/MVC/WebApplication1/WebApplication1/Views/Home/Index.cshtml]
+[D:/Education/ITI/Advanced SQL/Project (Team Kolo 3la Allah)/New folder/MVC/MVC/WebApplication1/WebApplication1/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Education/ITI/Advanced SQL/Project (Team Kolo 3la Allah)/MVC/WebApplication1/WebApplication1/Views/Home/Login.cshtml]
+[D:/Education/ITI/Advanced SQL/Project (Team Kolo 3la Allah)/New folder/MVC/MVC/WebApplication1/WebApplication1/Views/Home/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Education/ITI/Advanced SQL/Project (Team Kolo 3la Allah)/MVC/WebApplication1/WebApplication1/Views/Instructor/Instructor.cshtml]
+[D:/Education/ITI/Advanced SQL/Project (Team Kolo 3la Allah)/New folder/MVC/MVC/WebApplication1/WebApplication1/Views/Instructor/Instructor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxJbnN0cnVjdG9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Education/ITI/Advanced SQL/Project (Team Kolo 3la Allah)/MVC/WebApplication1/WebApplication1/Views/Instructor/Preview.cshtml]
+[D:/Education/ITI/Advanced SQL/Project (Team Kolo 3la Allah)/New folder/MVC/MVC/WebApplication1/WebApplication1/Views/Instructor/Preview.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxQcmV2aWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Education/ITI/Advanced SQL/Project (Team Kolo 3la Allah)/MVC/WebApplication1/WebApplication1/Views/Shared/Error.cshtml]
+[D:/Education/ITI/Advanced SQL/Project (Team Kolo 3la Allah)/New folder/MVC/MVC/WebApplication1/WebApplication1/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Education/ITI/Advanced SQL/Project (Team Kolo 3la Allah)/MVC/WebApplication1/WebApplication1/Views/Shared/_LoginPartial.cshtml]
+[D:/Education/ITI/Advanced SQL/Project (Team Kolo 3la Allah)/New folder/MVC/MVC/WebApplication1/WebApplication1/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Education/ITI/Advanced SQL/Project (Team Kolo 3la Allah)/MVC/WebApplication1/WebApplication1/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Education/ITI/Advanced SQL/Project (Team Kolo 3la Allah)/New folder/MVC/MVC/WebApplication1/WebApplication1/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Education/ITI/Advanced SQL/Project (Team Kolo 3la Allah)/MVC/WebApplication1/WebApplication1/Views/Student/Index.cshtml]
+[D:/Education/ITI/Advanced SQL/Project (Team Kolo 3la Allah)/New folder/MVC/MVC/WebApplication1/WebApplication1/Views/Student/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Education/ITI/Advanced SQL/Project (Team Kolo 3la Allah)/MVC/WebApplication1/WebApplication1/Views/Student/ShowInfo.cshtml]
+[D:/Education/ITI/Advanced SQL/Project (Team Kolo 3la Allah)/New folder/MVC/MVC/WebApplication1/WebApplication1/Views/Student/ShowInfo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxTaG93SW5mby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Education/ITI/Advanced SQL/Project (Team Kolo 3la Allah)/MVC/WebApplication1/WebApplication1/Views/Student/Welcome.cshtml]
+[D:/Education/ITI/Advanced SQL/Project (Team Kolo 3la Allah)/New folder/MVC/MVC/WebApplication1/WebApplication1/Views/Student/Welcome.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxXZWxjb21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Education/ITI/Advanced SQL/Project (Team Kolo 3la Allah)/MVC/WebApplication1/WebApplication1/Views/_ViewImports.cshtml]
+[D:/Education/ITI/Advanced SQL/Project (Team Kolo 3la Allah)/New folder/MVC/MVC/WebApplication1/WebApplication1/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Education/ITI/Advanced SQL/Project (Team Kolo 3la Allah)/MVC/WebApplication1/WebApplication1/Views/_ViewStart.cshtml]
+[D:/Education/ITI/Advanced SQL/Project (Team Kolo 3la Allah)/New folder/MVC/MVC/WebApplication1/WebApplication1/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Education/ITI/Advanced SQL/Project (Team Kolo 3la Allah)/MVC/WebApplication1/WebApplication1/Views/Shared/_Layout.cshtml]
+[D:/Education/ITI/Advanced SQL/Project (Team Kolo 3la Allah)/New folder/MVC/MVC/WebApplication1/WebApplication1/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-bddmc6yalx

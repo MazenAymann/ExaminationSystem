@@ -3,7 +3,7 @@
     public enum ExamStatus
     {
         submitted,
-       NotAvailable,
+        NotAvailable,
         Available,
         Missed
     }

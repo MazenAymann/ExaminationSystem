@@ -16,7 +16,7 @@
 <body>
 @if (Model?.Structure_ID != null)
 {
-    <input type="hidden" id="off" name="courseId" value="">
+        <input type="hidden" id="off" name="courseId" value="">
 
     <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
         <div class="offcanvas-header">
@@ -50,8 +50,8 @@
                 Number of Questions must be 10.
             </div>
             <div class="container row align-items-center justify-content-between">
-                <form action="@Url.Action("CreateExam", "ExamStructure")" method="post" class="fs-4 col-6" style="font-family:Montserrat;font-weight:600" onsubmit="return validateForm()">
-                    <input type="hidden" id="courseId" name="courseId" value="">
+                <form action="@Url.Action("CreateExam", "ExamStructure")" method="post" class="fs-4 col-6" style="font-family:Montserrat;font-weight:600" id="formCreate">
+                    <input required type="hidden" id="courseId" name="courseId" value="">
                     <div class="form-group">
                         <label for="course">Course:</label>
                         <div class="dropdown my-2">
@@ -84,12 +84,12 @@
 
                     <div class="form-group mt-2">
                         <label for="numMcq">Number of MCQs: </label>
-                        <input style="width:250px" type="number" class="form-control my-2" id="numMcq" name="numMcq" min="1" max="10" required oninput="checkSum()">
+                            <input style="width:250px" type="number" class="form-control my-2" id="numMcq" name="numMcq" min="1" max="10" required oninput="checkSum()">
                     </div>
 
                     <div class="form-group">
                         <label for="numTf">Number of T/F Qs:</label>
-                        <input style="width:250px" type="number" class="form-control my-2" id="numTf" name="numTf" min="1" max="10" required oninput="checkSum()">
+                            <input style="width:250px" type="number" class="form-control my-2" id="numTf" name="numTf" min="1" max="10" required oninput="checkSum()" >
                     </div>
 
                     <div class="form-group">
@@ -109,7 +109,7 @@
 
 
 
-                    <button type="submit" class="btn btn-secondary text-white m-a" id="submitBtn" >Create Exam</button>
+                    <button type="submit" class="btn btn-secondary text-white m-a" id="submitBtn"  >Create Exam</button>
 
                 </form>
                 <div class="col-6">
@@ -168,20 +168,22 @@
 
         var mcq = parseFloat(document.getElementById("numMcq").value);
         var tf = parseFloat(document.getElementById("numTf").value);
+
         var sum = mcq + tf;
 
         if (sum != 10) {
             document.getElementById("alert").style.display = "block";
-                document.getElementById("submitBtn").disabled = true;
+            document.getElementById("submitBtn").disabled = true;
         }
         else {
                 document.getElementById("alert").style.display = "none";
                 document.getElementById("submitBtn").disabled = false;
         }
 
+
+
     }
+
 </script>
 </body>
 </html>
-
-

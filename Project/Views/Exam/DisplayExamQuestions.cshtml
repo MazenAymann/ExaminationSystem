@@ -21,7 +21,7 @@
 }
 else
 {
-    <form id="examForm" method="post" action="@Url.Action("SubmitExam", "Exam")">
+    <form id="examForm" class="container" method="post" action="@Url.Action("SubmitExam", "Exam")">
 
 
         <input type="hidden" name="student_ID" value="2" />
@@ -60,7 +60,7 @@ else
 
 
 
-            <table class="table table-hover table-striped shadow p-3 mb-2 bg-white rounded text-start">
+            <table class="table table-hover table-striped shadow p-3 mb-2 bg-white rounded text-start container">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -77,9 +77,9 @@ else
                         idx++;
 
                         <tr>
-                            <td>@(idx+1)</td>
-                            <td>@question.Question</td>
-                            <td class="text-start">
+                            <td class="col-1">@(idx+1)</td>
+                            <td class="col-4"v>@question.Question</td>
+                            <td class="text-start col-3">
                                 <!-- Use text-start class to left-align content -->
                                 @if (question.Type == "MCQ")
                                 {

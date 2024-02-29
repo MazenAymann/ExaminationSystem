@@ -66,8 +66,20 @@
 
                         @if (item.examStatus == ExamStatus.submitted)
                         {
-                            <td class="py-2 text-center" style="background-color: #4CAF50; color: white;">Grade: @((item.Grade) * 10)%</td>
+                            if (item.Grade >= 5)
+                            {
+                                <td class="py-2 text-center" style="background-color: #4CAF50; color: white;">
 
+                                    Grade: @((item.Grade) * 10)%
+                                </td>
+                            }
+                            else
+                            {
+                                <td class="py-2 text-center" style="background-color: #F44336; color: white;">
+
+                                    Grade: @((item.Grade) * 10)%
+                                </td>
+                            }
                         }
                         else if (item.examStatus == ExamStatus.NotAvailable)
                         {
@@ -75,11 +87,11 @@
                         }
                         else if (item.examStatus == ExamStatus.Missed)
                         {
-                            <td class="py-2 text-center" style="background-color: #F44336; color: white;">Status: @item.examStatus</td> <!-- Red background for missed exams -->
+                            <td class="py-2 text-center" style="background-color: orange; color: white;">@item.examStatus</td> <!-- Red background for missed exams -->
                         }
                         else if (item.examStatus == ExamStatus.Available)
                         {
-                            <td class="py-2 text-center"><a href="#" class="link" onclick="displayExam('@item.Exam_ID')">Take Exam</a></td> <!-- Link to take exam -->
+                            <td class="py-2 text-center"><button href="#" class="btn btn-outline-primary w-100" onclick="displayExam('@item.Exam_ID')">Take Exam</button></td> <!-- Link to take exam -->
                         }
                         else
                         {
